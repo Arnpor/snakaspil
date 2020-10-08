@@ -1,7 +1,7 @@
 x = 1
 y = 1
 coins = 0
-
+direction = ''
 #Levers in 1,2 2,2 2,3 and 3,2
 
 while True:
@@ -11,10 +11,11 @@ while True:
             valid = "(N)orth."
             val_input= 'n', 'N'
         elif y==2:
-            pull_lever = input('Pull a lever (y/n): ')
-            if pull_lever == 'y':
-                coins += 1
-                print('You received 1 coin, your total is now {}.'.format(coins))
+            if direction in val_input:
+                pull_lever = input('Pull a lever (y/n): ')
+                if pull_lever == 'y':
+                    coins += 1
+                    print('You received 1 coin, your total is now {}.'.format(coins))
             valid = "(N)orth or (E)ast or (S)outh."
             val_input= 'n', 'N', 'e', 'E', 's', 'S'
         elif y==3:
@@ -25,17 +26,19 @@ while True:
             valid = "(N)orth."
             val_input= 'n', 'N'
         elif y==2:
-            pull_lever = input('Pull a lever (y/n): ')
-            if pull_lever == 'y':
-                coins += 1
-                print('You received 1 coin, your total is now {}.'.format(coins))
+            if direction in val_input:
+                pull_lever = input('Pull a lever (y/n): ')
+                if pull_lever == 'y':
+                    coins += 1
+                    print('You received 1 coin, your total is now {}.'.format(coins))
             valid = "(S)outh or (W)est."
             val_input= 'w', 'W', 's', 'S'
         elif y==3:
-            pull_lever = input('Pull a lever (y/n): ')
-            if pull_lever == 'y':
-                coins += 1
-                print('You received 1 coin, your total is now {}.'.format(coins))
+            if direction in val_input:
+                pull_lever = input('Pull a lever (y/n): ')
+                if pull_lever == 'y':
+                    coins += 1
+                    print('You received 1 coin, your total is now {}.'.format(coins))
             valid = "(E)ast or (W)est."
             val_input=  'e', 'E', 'w', 'W'
     elif x==3:
@@ -43,10 +46,11 @@ while True:
             print("Victory! Total coins {}.".format(coins))
             break
         elif y==2:
-            pull_lever = input('Pull a lever (y/n): ')
-            if pull_lever == 'y':
-                coins += 1
-                print('You received 1 coin, your total is now {}.'.format(coins))
+            if direction in val_input:
+                pull_lever = input('Pull a lever (y/n): ')
+                if pull_lever == 'y':
+                    coins += 1
+                    print('You received 1 coin, your total is now {}.'.format(coins))
             valid ="(N)orth or (S)outh."
             val_input= 'n','N','s','S'
         elif y==3:
@@ -66,6 +70,8 @@ while True:
             y -= 1
     else:
         print("Not a valid direction!")
+        invalid_direction = True
+
     #directions búið
     
     #(S)outh
